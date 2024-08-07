@@ -114,7 +114,7 @@ public static class ConsoleVisualization
                     var cardWidth = (4 - card.CardShortcut.Length) / 2;
 
                     var paddingBefore = new string(' ', cardWidth);
-                    var paddingAfter = new string(' ', 5 - cardWidth - card.CardShortcut.Length);
+                    var paddingAfter = new string(' ', 4 - cardWidth - card.CardShortcut.Length);
 
                     return $"{paddingBefore}{shortcut}{paddingAfter}";
                 }

@@ -3,6 +3,9 @@
 This project is a C# implementation of the UNO card game. The game supports both console and web-based play, with features including game state saving/loading, AI players, and multiplayer support. 
 **Work is still in progress.**
 
+![Web gameplay](gameplay.png)  
+![Console menu](consoleMenu.png)  
+![Console gameplay](consoleGameplay.png)
 
 ## Project Overview
 
