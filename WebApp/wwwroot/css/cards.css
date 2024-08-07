@@ -1,0 +1,537 @@
+:root {
+    --yellow: #DED71F;
+    --green: #3E9E32;
+    --blue: #3F4CFF;
+    --red: #C11F1F;
+    --width: 100px;
+    --height: calc(var(--width) * 1.6);
+    --border-radius: calc(var(--width) / 10);
+    --ellipse-width: calc(var(--width) * 0.8);
+    --ellipse-height: calc(var(--width) * 1.3);
+    --ellipse-top: calc((var(--width) * 1.6 - var(--ellipse-height)) / 2);
+    --content-skip: calc(var(--height) / 4);
+    --small-content-skip: calc(var(--height) / 15);
+    --content-font: calc(var(--height) / 2.5);
+    --small-content-font: calc(var(--height) / 10);
+    --skip-border: calc(var(--height) / 20);
+    --small-skip-border: calc(var(--height) / 75);
+    --plus-two-width: calc(var(--width) / 4);
+    --plus-two-height: calc(var(--width) / 4 * 1.6);
+    --plus-two-left: calc(var(--width) / 5.7);
+    --plus-two-border: calc(var(--width) / 40);
+    --reverse-content-height: calc(var(--height) / 2);
+    --reverse-arrow: calc(var(--reverse-content-height) / 4);
+    --reverse-after-right: calc(-1 * var(--reverse-content-height) / 4 + 1);
+    --reverse-content-top: calc(-1 * var(--reverse-content-height) / 8);
+    --reverse-last-child-top: calc(var(--reverse-content-height) / 20);
+    --reverse-last-child-right: calc(var(--reverse-content-height) / 3);
+    --wild-margin: calc(-1 * var(--ellipse-width) / 3.2);
+    --wild-margin2: calc(-1 * var(--ellipse-width) / 4);
+    --wild-height: calc(var(--ellipse-width) * 1.625);
+    --wild-segment-width: calc(var(--ellipse-width) / 2);
+    --wild-segment-height: calc(var(--ellipse-width) * 1.625 / 2);
+    --small-segment-wild-width: calc(var(--ellipse-width) / 15);
+    --small-segment-wild-height: calc(var(--ellipse-height) / 17);
+    --small-content-reverse: calc(var(--height) / 15 * 2);
+    --wild-border: calc(var(--width) / 100);
+    --small-content-top: calc(var(--width) / 40);
+    --small-content-left: calc(var(--width) / 20);
+    --small-content-reverse-left: calc(-1 * var(--ellipse-width) / 15 + 1);
+    --small-content-after: calc(-1 * var(--height) / 60);
+    --small-content-reverse-right: calc(var(--height) / 22.5);
+    --small-content-reverse-top: calc(var(--height) / 150);
+    --plus-four-margin: calc(-1 * var(--width) / 4);
+    --plus-four-margin2: calc(-1 * var(--width) / 5);
+}
+
+.card {
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    display: inline-block;
+    position: relative;
+    font-family: Tahoma, serif;
+}
+
+.card.green {
+    background-color: var(--green);
+}
+.card.blue {
+    background-color: var(--blue);
+}
+.card.red {
+    background-color: var(--red);
+}
+.card.yellow {
+    background-color: var(--yellow);
+}
+.card.black {
+    background-color: black;
+}
+.card .ellipse {
+    background-color: white;
+    margin: auto;
+    width: var(--ellipse-width);
+    height: var(--ellipse-height);
+    position: relative;
+    top: var(--ellipse-top);
+    border-radius: 50%;
+    transform: skewX(-25deg);
+}
+
+.card .content {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    font-size: var(--content-font);
+    font-weight: bold;
+}
+.card .content.green {
+    color: #3e9e32;
+}
+.card .content.blue {
+    color: #3f4cff;
+}
+.card .content.red {
+    color: #c11f1f;
+}
+.card .content.yellow {
+    color: #ded71f;
+}
+.card .content.black {
+    color: black;
+}
+
+.card .content .skip {
+    width: var(--content-skip);
+    height: var(--content-skip);
+    border-radius: 50%;
+    margin-top: 20%;
+}
+
+.card .content.green .skip {
+    border: var(--skip-border) solid #3e9e32;
+}
+
+.card .content.blue .skip {
+    border: var(--skip-border) solid #3f4cff;
+}
+
+.card .content.red .skip {
+    border: var(--skip-border) solid #c11f1f;
+}
+
+.card .content.yellow .skip {
+    border: var(--skip-border) solid #ded71f;
+}
+
+.card .content.green .skip:before {
+    background-color: #3e9e32;
+}
+
+.card .content.blue .skip:before {
+    background-color: #3f4cff;
+}
+
+.card .content.red .skip:before {
+    background-color: #c11f1f;
+}
+
+.card .content.yellow .skip:before {
+    background-color: #ded71f;
+}
+
+.card .content.black .skip:before {
+    background-color: black;
+}
+
+.card .content .skip:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20%;
+    position: relative;
+    top: 40%;
+    transform: rotate(-45deg);
+}
+
+.card .content.green .plus-two,
+.card .content.blue .plus-two,
+.card .content.red .plus-two,
+.card .content.yellow .plus-two,
+.card .content.black .plus-two {
+    /* height: 100%; */
+    position: relative;
+}
+
+.card .content .plus-two:before,
+.card .content .plus-two:after {
+    content: "";
+    display: block;
+    width: var(--plus-two-width);
+    height: var(--plus-two-height);
+    border-radius: 10%;
+    border: var(--plus-two-border) solid white;
+    position: absolute;
+}
+
+.card .content.green .plus-two:before,
+.card .content.green .plus-two:after{
+    background-color: #3e9e32;
+}
+
+.card .content.blue .plus-two:before,
+.card .content.blue .plus-two:after{
+    background-color: #3f4cff;
+}
+
+.card .content.red .plus-two:before,
+.card .content.red .plus-two:after{
+    background-color: #c11f1f;
+}
+
+.card .content.yellow .plus-two:before,
+.card .content.yellow .plus-two:after{
+    background-color: #ded71f;
+}
+
+.card .content.black .plus-two:before,
+.card .content.black .plus-two:after{
+    background-color: black;
+}
+
+.card .plus-two:before {
+    left: var(--plus-two-left);
+}
+
+.card .plus-two:after {
+    top: var(--plus-two-width);
+}
+
+.card .content .reverse {
+    height: var(--reverse-content-height);
+    margin-top: 30%;
+    margin-left: 100%;
+}
+
+
+
+
+.card .content .reverse .arrows {
+    display: inline-block;
+    transform: rotate(-45deg);
+}
+
+.card .content .reverse .arrows .arrow {
+    width: var(--reverse-arrow);
+    height: var(--reverse-arrow);
+    position: relative;
+}
+
+.card .content.green .reverse .arrows .arrow {
+    background-color: #3e9e32;
+}
+
+.card .content.blue .reverse .arrows .arrow {
+    background-color: #3f4cff;
+}
+
+.card .content.red .reverse .arrows .arrow {
+    background-color: #c11f1f;
+}
+
+.card .content.yellow .reverse .arrows .arrow {
+    background-color: #ded71f;
+}
+
+.card .content.black .reverse .arrows .arrow {
+    background-color: black;
+}
+
+.card .content .reverse .arrows .arrow:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: var(--reverse-arrow) solid #ded71f;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right: none;
+    position: absolute;
+    right: var(--reverse-after-right);
+    top: var(--reverse-content-top);
+}
+
+.card .content.blue .reverse .arrows .arrow:before,
+.card .content.green .reverse .arrows .arrow:before,
+.card .content.red .reverse .arrows .arrow:before,
+.card .content.yellow .reverse .arrows .arrow:before,
+.card .content.black .reverse .arrows .arrow:before {
+    content: "";
+    display: block;
+    width: var(--reverse-arrow);
+    height: var(--reverse-arrow);
+    background-color: inherit;
+    border-top-left-radius: 100%;
+    position: absolute;
+    left: var(--reverse-after-right);
+}
+
+.card .content.green .reverse .arrows .arrow:after {
+    border-left: var(--reverse-arrow) solid #3e9e32;
+}
+
+.card .content.blue .reverse .arrows .arrow:after {
+    border-left: var(--reverse-arrow) solid #3f4cff;
+}
+
+.card .content.red .reverse .arrows .arrow:after {
+    border-left: var(--reverse-arrow) solid #c11f1f;
+}
+
+.card .content.yellow .reverse .arrows .arrow:after {
+    border-left: var(--reverse-arrow) solid #ded71f;
+}
+
+.card .content.black .reverse .arrows .arrow:after {
+    border-left: var(--reverse-arrow) solid black;
+}
+
+.card .content .reverse .arrows .arrow:last-child {
+    transform: rotate(180deg);
+    top: var(--reverse-last-child-top);
+    right: var(--reverse-last-child-right);
+}
+
+
+
+
+
+.card .content.black .skip {
+    width: 80px;
+    height: 80px;
+    border: 16px solid black;
+    border-radius: 50%;
+    margin-top: 20%;
+}
+
+.card .content .skip {
+    margin-left: -10%;
+}
+
+.card .content .wild {
+    margin: var(--wild-margin) 0 0 var(--wild-margin2);
+    background-color: white;
+    width: var(--ellipse-width);
+    height: var(--wild-height);
+    border-radius: 50%;
+    transform: skewX(-25deg);
+    overflow: hidden;
+    font-size: 0;
+    border: var(--wild-border) solid white;
+}
+
+.card .content .wild .segment {
+    display: inline-block;
+    width: var(--wild-segment-width);
+    height: var(--wild-segment-height);
+}
+
+.card .content .wild .segment.red {
+    background-color: #c11f1f;
+}
+
+.card .content .wild .segment.green {
+    background-color: #3e9e32;
+}
+
+.card .content .wild .segment.yellow {
+    background-color: #ded71f;
+}
+
+.card .content .wild .segment.blue {
+    background-color: #3f4cff;
+}
+
+.card .small-content,
+.card .small-content-reverse {
+    position: absolute;
+    font-size: var(--small-content-font);
+    color: white;
+    font-weight: bold;
+}
+
+.card .small-content .skip,
+.card .small-content-reverse .skip {
+    width: var(--small-content-skip);
+    height: var(--small-content-skip);
+    border: var(--small-skip-border) solid white;
+    border-radius: 50%;
+    margin-top: 20%;
+}
+
+.card .small-content .skip:before,
+.card .small-content-reverse .skip:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    position: relative;
+    top: 40%;
+    transform: rotate(-45deg);
+}
+
+.card .small-content .reverse,
+.card .small-content-reverse .reverse {
+    height: var(--small-content-reverse);
+    margin-top: 60%;
+    margin-left: 100%;
+}
+
+.card .small-content .reverse .arrows,
+.card .small-content-reverse .reverse .arrows {
+    display: inline-block;
+    transform: rotate(-45deg);
+}
+
+.card .small-content .reverse .arrows .arrow,
+.card .small-content-reverse .reverse .arrows .arrow {
+    width: var(--small-segment-wild-width);
+    height: var(--small-segment-wild-width);
+    background-color: white;
+    position: relative;
+}
+
+.card .small-content .reverse .arrows .arrow:before,
+.card .small-content-reverse .reverse .arrows .arrow:before {
+    content: "";
+    display: block;
+    width: var(--small-segment-wild-width);
+    height: var(--small-segment-wild-width);
+    background-color: inherit;
+    border-top-left-radius: 100%;
+    position: absolute;
+    left: var(--small-content-reverse-left);
+}
+
+.card .small-content .reverse .arrows .arrow:after,
+.card .small-content-reverse .reverse .arrows .arrow:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: var(--small-segment-wild-width) solid white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right: none;
+    position: absolute;
+    right: var(--small-content-reverse-left);
+    top: var(--small-content-after);
+}
+
+.card .small-content .reverse .arrows .arrow:last-child,
+.card .small-content-reverse .reverse .arrows .arrow:last-child {
+    transform: rotate(180deg);
+    top: var(--small-content-reverse-top);
+    right: var(--small-content-reverse-right);
+}
+
+.card .small-content .wild,
+.card .small-content-reverse .wild {
+    margin: -6.66666667px 0 0 var(--small-content-after);
+    background-color: white;
+    width: var(--small-content-skip);
+    border-radius: 50%;
+    transform: skewX(-25deg);
+    overflow: hidden;
+    font-size: 0;
+    border: 2px solid white;
+}
+
+.card .small-content .wild .segment,
+.card .small-content-reverse .wild .segment {
+    display: inline-block;
+    width: var(--small-segment-wild-width);
+    height: var(--small-segment-wild-height);
+}
+
+.card .small-content .wild .segment.red,
+.card .small-content-reverse .wild .segment.red {
+    background-color: #c11f1f;
+}
+
+.card .small-content .wild .segment.green,
+.card .small-content-reverse .wild .segment.green {
+    background-color: #3e9e32;
+}
+
+.card .small-content .wild .segment.yellow,
+.card .small-content-reverse .wild .segment.yellow {
+    background-color: #ded71f;
+}
+
+.card .small-content .wild .segment.blue,
+.card .small-content-reverse .wild .segment.blue {
+    background-color: #3f4cff;
+}
+
+.card .small-content .wild,
+.card .small-content-reverse .wild {
+    margin: 0;
+    border: 1px solid white;
+}
+
+.card .small-content {
+    top: var(--small-content-top);
+    left: var(--small-content-left);
+}
+
+.card .small-content-reverse {
+    right: var(--small-content-left);
+    bottom: var(--small-content-top);
+    transform: rotate(180deg);
+}
+
+
+.plus-four {
+    /* background-color: transparent; */
+    width: var(--ellipse-width);
+    height: var(--ellipse-height);
+    position: relative;
+    margin: var(--plus-four-margin) 0 0 var(--plus-four-margin2);
+}
+
+.plus-four div[class^="card"] {
+    width: var(--plus-two-width);
+    height: var(--plus-two-height);
+    border-radius: 10%;
+    border: var(--plus-two-border) solid white;
+    position: absolute;
+}
+
+
+.plus-four .card1 {
+    background-color: #3e9e32;
+    left: 5%;
+    top: 50%;
+}
+
+.plus-four .card2 {
+    background-color: #3f4cff;
+    top: 25%;
+    left: 25%;
+}
+
+.plus-four .card3 {
+    background-color: #c11f1f;
+    top: 35%;
+    left: 45%;
+}
+
+.plus-four .card4 {
+    background-color: #ded71f;
+    top: 10%;
+    left: 65%;
+}
+

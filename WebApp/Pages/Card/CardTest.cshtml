@@ -1,0 +1,858 @@
+@page
+@model WebApp.Pages.Card.CardTest
+
+@{
+    Layout = null;
+}
+
+@{
+  string yellow = "#DED71F";
+  string green = "#3E9E32";
+  string blue = "#3F4CFF";
+  string red = "#C11F1F";
+    
+    
+    double width = 200;
+    double height = width * 1.6;
+    string borderRadius = width / 10 + "px";
+    double ellipseWidth = width * 0.8;
+    double ellipseHeight = width * 1.3;
+    double ellipseTop = (width * 1.6 - ellipseHeight) / 2;
+    double contentSkip = height / 4;
+    double smallContentSkip = height / 15;
+    string contentFont = height / 2.5 + "px";
+    string smallContentFont = height / 10 + "px";
+    string skipBorder = height / 20 + "px";
+    string smallSkipBorder = height / 75 + "px";
+    double plusTwoWidth = width / 4;
+    double plusTwoHeight = (width / 4) * 1.6;
+    double plusTwoLeft = width / 5.7;
+    string plusTwoBorder = width / 40 + "px";
+    double reverseContentHeight = height / 2;
+    string reverseArrow = (reverseContentHeight / 4) + "px";
+    string reverseAfterRight = (-reverseContentHeight / 4) + 1 + "px";
+    string reverseContentTop = (-reverseContentHeight / 8) + "px";
+    string reverseLastChildTop = (reverseContentHeight / 20) + "px";
+    string reverseLastChildRight = (reverseContentHeight / 3) + "px";
+    string wildMargin = -ellipseWidth / 3.2 + "px";
+    string wildMargin2 = -ellipseWidth / 4 + "px";
+    string wildHeight = ellipseWidth * 1.625 + "px";
+    string wildSegmentWidth = ellipseWidth / 2 + "px";
+    string wildSegmentHeight = (ellipseWidth * 1.625) / 2 + "px";
+    string smallSegmentWildWidth = ellipseWidth / 15 + "px";
+    string smallSegmentWildHeight = ellipseHeight / 17 + "px";
+    string smallContentReverse = height / 15 * 2 + "px";
+    string wildBorder = width / 100 + "px";
+    string smallContentTop = width / 40 + "px";
+    string smallContentLeft = width / 20 + "px";
+    string smallContentReverseLeft = -(ellipseWidth / 15) + 1 + "px";
+    string smallContentAfter = -height / 60 + "px";
+    string smallContentReverseRight = height / 22.5 + "px";
+    string smallContentReverseTop = height / 150+ "px";
+    string plusFourMargin = -width / 4 + "px";
+    string plusFourMargin2 = -width / 5 + "px";
+}
+
+<style>
+
+.card {
+  width: @width;
+  height: @height;
+  border-radius: @borderRadius;
+  display: inline-block;
+  position: relative;
+  font-family: Tahoma,serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid black; 
+}
+
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: -3px; 
+  right: -3px; 
+  bottom: -3px;
+  left: -3px;
+  border: 2px solid white; 
+  border-radius: inherit;
+}
+
+
+.card.green {
+  background-color: @green;
+}
+.card.blue {
+  background-color: @blue;
+}
+.card.red {
+  background-color: @red;
+}
+.card.yellow {
+  background-color: @yellow;
+}
+.card.black {
+  background-color: black;
+}
+.card .ellipse {
+  background-color: white;
+  margin: auto;
+  width: @ellipseWidth;
+  height: @ellipseHeight;
+  position: relative;
+  top: @ellipseTop;
+  border-radius: 50%;
+  transform: skewX(-25deg);
+}
+
+.card .content {
+  position: absolute;
+  left: 30%;
+  top: 25%;
+  font-size: @contentFont;
+  font-weight: bold;
+}
+.card .content.green {
+  color: #3e9e32;
+}
+.card .content.blue {
+  color: #3f4cff;
+}
+.card .content.red {
+  color: #c11f1f;
+}
+.card .content.yellow {
+  color: #ded71f;
+}
+.card .content.black {
+  color: black;
+}
+
+.card .content .skip {
+  width: @contentSkip;
+  height: @contentSkip;
+  border-radius: 50%;
+  margin-top: 20%;
+}
+
+.card .content.green .skip {
+  border: @skipBorder solid #3e9e32;
+}
+
+.card .content.blue .skip {
+  border: @skipBorder solid #3f4cff;
+}
+
+.card .content.red .skip {
+  border: @skipBorder solid #c11f1f;
+}
+
+.card .content.yellow .skip {
+  border: @skipBorder solid #ded71f;
+}
+
+.card .content.green .skip:before {
+  background-color: #3e9e32;
+}
+
+.card .content.blue .skip:before {
+  background-color: #3f4cff;
+}
+
+.card .content.red .skip:before {
+  background-color: #c11f1f;
+}
+
+.card .content.yellow .skip:before {
+  background-color: #ded71f;
+}
+
+.card .content.black .skip:before {
+  background-color: black;
+}
+
+.card .content .skip:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20%;
+  position: relative;
+  top: 40%;
+  transform: rotate(-45deg);
+}
+
+.card .content.green .plus-two,
+.card .content.blue .plus-two,
+.card .content.red .plus-two,
+.card .content.yellow .plus-two,
+.card .content.black .plus-two {
+  /* height: 100%; */
+  position: relative;
+}
+
+.card .content .plus-two:before,
+.card .content .plus-two:after {
+  content: "";
+  display: block;
+  width: @plusTwoWidth;
+  height: @plusTwoHeight;
+  border-radius: 10%;
+  border: @plusTwoBorder solid white;
+  position: absolute;
+}
+
+.card .content.green .plus-two:before,
+.card .content.green .plus-two:after{
+  background-color: #3e9e32;
+}
+
+.card .content.blue .plus-two:before,
+ .card .content.blue .plus-two:after{
+  background-color: #3f4cff;
+}
+
+.card .content.red .plus-two:before,
+ .card .content.red .plus-two:after{
+  background-color: #c11f1f;
+}
+
+.card .content.yellow .plus-two:before,
+.card .content.yellow .plus-two:after{
+background-color: #ded71f;
+}
+
+.card .content.black .plus-two:before,
+ .card .content.black .plus-two:after{
+  background-color: black;
+}
+
+.card .plus-two:before {
+    left: @plusTwoLeft;
+}
+
+.card .plus-two:after {
+    top: @plusTwoWidth;
+}
+
+.card .content .reverse {
+  height: @reverseContentHeight;
+  margin-top: 30%;
+  margin-left: 100%;
+}
+
+.card .content .reverse .arrows {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.card .content .reverse .arrows .arrow {
+  width: @reverseArrow; 
+  height: @reverseArrow;
+  position: relative;
+}
+
+.card .content.green .reverse .arrows .arrow {
+  background-color: #3e9e32;
+}
+
+.card .content.blue .reverse .arrows .arrow {
+  background-color: #3f4cff;
+}
+
+.card .content.red .reverse .arrows .arrow {
+  background-color: #c11f1f;
+}
+
+.card .content.yellow .reverse .arrows .arrow {
+  background-color: #ded71f;
+}
+
+.card .content.black .reverse .arrows .arrow {
+  background-color: black;
+}
+
+.card .content .reverse .arrows .arrow:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: @reverseArrow solid #ded71f;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right: none;
+    position: absolute;
+    right: @reverseAfterRight;
+    top: @reverseContentTop;
+}
+
+.card .content.blue .reverse .arrows .arrow:before,
+.card .content.green .reverse .arrows .arrow:before,
+.card .content.red .reverse .arrows .arrow:before,
+.card .content.yellow .reverse .arrows .arrow:before,
+.card .content.black .reverse .arrows .arrow:before {
+  content: "";
+  display: block;
+  width: @reverseArrow;
+  height: @reverseArrow;
+  background-color: inherit;
+  border-top-left-radius: 100%;
+  position: absolute;
+  left: @reverseAfterRight;
+}
+
+.card .content.green .reverse .arrows .arrow:after {
+  border-left: @reverseArrow solid #3e9e32;
+}
+
+.card .content.blue .reverse .arrows .arrow:after {
+  border-left: @reverseArrow solid #3f4cff;
+}
+
+.card .content.red .reverse .arrows .arrow:after {
+  border-left: @reverseArrow solid #c11f1f;
+}
+
+.card .content.yellow .reverse .arrows .arrow:after {
+  border-left: @reverseArrow solid #ded71f;
+}
+
+.card .content.black .reverse .arrows .arrow:after {
+  border-left: @reverseArrow solid black;
+}
+
+.card .content .reverse .arrows .arrow:last-child {
+  transform: rotate(180deg);
+  top: @reverseLastChildTop;
+  right: @reverseLastChildRight;
+}
+
+.card .content.black .skip {
+  width: 80px;
+  height: 80px;
+  border: 16px solid black;
+  border-radius: 50%;
+  margin-top: 20%;
+}
+
+.card .content .skip {
+  margin-left: -10%;
+}
+
+.card .content .wild {
+  margin: @wildMargin 0 0 @wildMargin2;
+  background-color: white;
+  width: @ellipseWidth;
+  height: @wildHeight;
+  border-radius: 50%;
+  transform: skewX(-25deg);
+  overflow: hidden;
+  font-size: 0;
+  border: @wildBorder solid white;
+}
+
+
+.card .content .wild .segment {
+  display: inline-block;
+  width: @wildSegmentWidth;
+  height: @wildSegmentHeight;
+}
+
+.card .content .wild .segment.red {
+  background-color: #c11f1f;
+}
+.card .content .wild .segment.green {
+  background-color: #3e9e32;
+}
+.card .content .wild .segment.yellow {
+  background-color: #ded71f;
+}
+.card .content .wild .segment.blue {
+  background-color: #3f4cff;
+}
+
+.card .small-content,
+.card .small-content-reverse {
+  position: absolute;
+  font-size: @smallContentFont;
+  color: white;
+  font-weight: bold;
+}
+
+.card .small-content .skip,
+.card .small-content-reverse .skip {
+  width: @smallContentSkip;
+  height: @smallContentSkip;
+  border: @smallSkipBorder solid white;
+  border-radius: 50%;
+  margin-top: 20%;
+}
+.card .small-content .skip:before,
+.card .small-content-reverse .skip:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20%;
+  background-color: white;
+  position: relative;
+  top: 40%;
+  transform: rotate(-45deg);
+}
+
+.card .small-content .reverse,
+.card .small-content-reverse .reverse {
+  height: @smallContentReverse;
+  margin-top: 60%;
+  margin-left: 100%;
+}
+.card .small-content .reverse .arrows,
+.card .small-content-reverse .reverse .arrows {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.card .small-content .reverse .arrows .arrow,
+.card .small-content-reverse .reverse .arrows .arrow {
+  width: @smallSegmentWildWidth;
+  height: @smallSegmentWildWidth;
+  background-color: white;
+  position: relative;
+}
+
+.card .small-content .reverse .arrows .arrow:before,
+.card .small-content-reverse .reverse .arrows .arrow:before {
+  content: "";
+  display: block;
+  width: @smallSegmentWildWidth;
+  height: @smallSegmentWildWidth;
+  background-color: inherit;
+  border-top-left-radius: 100%;
+  position: absolute;
+  left: @smallContentReverseLeft;
+}
+
+.card .small-content .reverse .arrows .arrow:after,
+.card .small-content-reverse .reverse .arrows .arrow:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: @smallSegmentWildWidth solid white;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right: none;
+  position: absolute;
+  right: @smallContentReverseLeft;
+  top: @smallContentAfter;
+}
+
+.card .small-content .reverse .arrows .arrow:last-child,
+.card .small-content-reverse .reverse .arrows .arrow:last-child {
+  transform: rotate(180deg);
+  top: @smallContentReverseTop;
+  right: @smallContentReverseRight;
+}
+
+.card .small-content .wild,
+.card .small-content-reverse .wild {
+  margin: -6.66666667px 0 0 @smallContentAfter;
+  background-color: white;
+  width: @smallContentSkip;
+  border-radius: 50%;
+  transform: skewX(-25deg);
+  overflow: hidden;
+  font-size: 0;
+  border: 2px solid white;
+}
+
+.card .small-content .wild .segment,
+.card .small-content-reverse .wild .segment {
+  display: inline-block;
+  width: @smallSegmentWildWidth;
+  height: @smallSegmentWildHeight;
+}
+
+.card .small-content .wild .segment.red,
+.card .small-content-reverse .wild .segment.red {
+  background-color: #c11f1f;
+}
+.card .small-content .wild .segment.green,
+.card .small-content-reverse .wild .segment.green {
+  background-color: #3e9e32;
+}
+.card .small-content .wild .segment.yellow,
+.card .small-content-reverse .wild .segment.yellow {
+  background-color: #ded71f;
+}
+.card .small-content .wild .segment.blue,
+.card .small-content-reverse .wild .segment.blue {
+  background-color: #3f4cff;
+}
+
+.card .small-content .wild,
+.card .small-content-reverse .wild {
+  margin: 0;
+  border: 1px solid white;
+}
+
+.card .small-content {
+  top: @smallContentTop;
+  left: @smallContentLeft;
+}
+
+.card .small-content-reverse {
+  right: @smallContentLeft;
+  bottom: @smallContentTop;
+  transform: rotate(180deg);
+}
+
+.plus-four {
+  /* background-color: transparent; */
+  width: @ellipseWidth;
+  height: @ellipseHeight;
+  position: relative;
+  margin: @plusFourMargin 0 0 @plusFourMargin2;
+}
+
+.plus-four div[class^="card"] {
+  width: @plusTwoWidth;
+  height: @plusTwoHeight;
+  border-radius: 10%;
+  border: @plusTwoBorder solid white;
+  position: absolute;
+}
+
+.plus-four .card1 {
+  background-color: #3e9e32;
+  left: 5%;
+  top: 50%;
+}
+
+.plus-four .card2 {
+  background-color: #3f4cff;
+  top: 25%;
+  left: 25%;
+}
+
+.plus-four .card3 {
+  background-color: #c11f1f;
+  top: 35%;
+  left: 45%;
+}
+
+.plus-four .card4 {
+  background-color: #ded71f;
+  top: 10%;
+  left: 65%;
+}
+
+</style>
+
+<div ng-app="App" class="ng-scope">
+  <card content="0" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">0</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">0</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">0</div>
+    </div>
+  </card>
+  
+   <card content="0" color="green" class="ng-isolate-scope">
+      <div class="card green" ng-class="color">
+        <div class="ellipse"></div>
+        <div class="content ng-binding green" ng-class="color" ng-bind-html="content">0</div>
+        <div class="small-content ng-binding green" ng-class="color" ng-bind-html="smallContent">0</div>
+        <div class="small-content-reverse ng-binding green" ng-class="color" ng-bind-html="smallContent">0</div>
+      </div>
+    </card>
+    
+     <card content="0" color="blue" class="ng-isolate-scope">
+        <div class="card blue" ng-class="color">
+          <div class="ellipse"></div>
+          <div class="content ng-binding blue" ng-class="color" ng-bind-html="content">0</div>
+          <div class="small-content ng-binding blue" ng-class="color" ng-bind-html="smallContent">0</div>
+          <div class="small-content-reverse ng-binding blue" ng-class="color" ng-bind-html="smallContent">0</div>
+        </div>
+      </card>
+  
+  
+  <card content="1" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">1</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">1</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">1</div>
+    </div>
+  </card>
+  <card content="2" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">2</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">2</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">2</div>
+    </div>
+  </card>
+  <card content="3" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">3</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">3</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">3</div>
+    </div>
+  </card>
+  <card content="4" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">4</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">4</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">4</div>
+    </div>
+  </card>
+  <card content="5" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">5</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">5</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">5</div>
+    </div>
+  </card>
+  <card content="6" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">6</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">6</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">6</div>
+    </div>
+  </card>
+  <card content="7" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">7</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">7</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">7</div>
+    </div>
+  </card>
+  <card content="8" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">8</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">8</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">8</div>
+    </div>
+  </card>
+  <card content="9" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">9</div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">9</div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">9</div>
+    </div>
+  </card>
+  <card type="skip" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">
+        <div class="skip"></div>
+      </div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">
+        <div class="skip"></div>
+      </div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">
+        <div class="skip"></div>
+      </div>
+    </div>
+  </card>
+  
+  
+  
+<card type="plus-two" color="yellow" class="ng-isolate-scope">
+  <div class="card yellow" ng-class="color">
+    <div class="ellipse"></div>
+    <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">
+      <div class="plus-two"></div>
+    </div>
+    <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">+2</div>
+    <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">+2</div>
+  </div>
+</card>
+
+
+<card type="plus-two" color="green" class="ng-isolate-scope">
+  <div class="card green" ng-class="color">
+    <div class="ellipse"></div>
+    <div class="content ng-binding green" ng-class="color" ng-bind-html="content">
+      <div class="plus-two"></div>
+    </div>
+    <div class="small-content ng-binding green" ng-class="color" ng-bind-html="smallContent">+2</div>
+    <div class="small-content-reverse ng-binding green" ng-class="color" ng-bind-html="smallContent">+2</div>
+  </div>
+</card>
+
+
+<card type="plus-two" color="red" class="ng-isolate-scope">
+  <div class="card red" ng-class="color">
+    <div class="ellipse"></div>
+    <div class="content ng-binding red" ng-class="color" ng-bind-html="content">
+      <div class="plus-two"></div>
+    </div>
+    <div class="small-content ng-binding red" ng-class="color" ng-bind-html="smallContent">+2</div>
+    <div class="small-content-reverse ng-binding red" ng-class="color" ng-bind-html="smallContent">+2</div>
+  </div>
+</card>
+
+
+<card type="plus-two" color="blue" class="ng-isolate-scope">
+  <div class="card blue" ng-class="color">
+    <div class="ellipse"></div>
+    <div class="content ng-binding blue" ng-class="color" ng-bind-html="content">
+      <div class="plus-two"></div>
+    </div>
+    <div class="small-content ng-binding blue" ng-class="color" ng-bind-html="smallContent">+2</div>
+    <div class="small-content-reverse ng-binding blue" ng-class="color" ng-bind-html="smallContent">+2</div>
+  </div>
+</card>
+
+
+<card type="reverse" color="yellow" class="ng-isolate-scope">
+    <div class="card yellow" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding yellow" ng-class="color" ng-bind-html="content">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content ng-binding yellow" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content-reverse ng-binding yellow" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </card>
+
+
+
+<card type="reverse" color="green" class="ng-isolate-scope">
+    <div class="card green" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding green" ng-class="color" ng-bind-html="content">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content ng-binding green" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content-reverse ng-binding green" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </card>
+
+
+
+
+
+
+<card type="reverse" color="red" class="ng-isolate-scope">
+    <div class="card red" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding red" ng-class="color" ng-bind-html="content">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content ng-binding red" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="small-content-reverse ng-binding red" ng-class="color" ng-bind-html="smallContent">
+        <div class="reverse">
+          <div class="arrows">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </card>
+
+
+  <card type="wild" class="ng-isolate-scope">
+    <div class="card black" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding black" ng-class="color" ng-bind-html="content">
+        <div class="wild">
+          <div class="segment yellow"></div>
+          <div class="segment green"></div>
+          <div class="segment blue"></div>
+          <div class="segment red"></div>
+        </div>
+      </div>
+      <div class="small-content ng-binding black" ng-class="color" ng-bind-html="smallContent">
+        <div class="wild">
+          <div class="segment yellow"></div>
+          <div class="segment green"></div>
+          <div class="segment blue"></div>
+          <div class="segment red"></div>
+        </div>
+      </div>
+      <div class="small-content-reverse ng-binding black" ng-class="color" ng-bind-html="smallContent">
+        <div class="wild">
+          <div class="segment yellow"></div>
+          <div class="segment green"></div>
+          <div class="segment blue"></div>
+          <div class="segment red"></div>
+        </div>
+      </div>
+    </div>
+  </card>
+  <card type="plus-four" class="ng-isolate-scope">
+    <div class="card black" ng-class="color">
+      <div class="ellipse"></div>
+      <div class="content ng-binding black" ng-class="color" ng-bind-html="content">
+        <div class="plus-four">
+          <div class="card1"></div>
+          <div class="card2"></div>
+          <div class="card3"></div>
+          <div class="card4"></div>
+        </div>
+      </div>
+      <div class="small-content ng-binding black" ng-class="color" ng-bind-html="smallContent">+4</div>
+      <div class="small-content-reverse ng-binding black" ng-class="color" ng-bind-html="smallContent">+4</div>
+    </div>
+  </card>
+</div>

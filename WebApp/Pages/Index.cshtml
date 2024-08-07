@@ -1,0 +1,97 @@
+﻿@page
+@using System.Drawing
+@model IndexModel
+@{
+    ViewData["Title"] = "Uno Game";
+}
+
+<style>
+    
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .updated {
+        margin-top: auto;
+    }
+    
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Uno Game</h1>
+</div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-6 column">
+
+        <span class="text-black" style="font-size: 18px">Start a new game or continue an existing game.</span>
+
+
+        <a asp-page="/Games/Create">
+            <button type="button" class="btn btn-outline-dark mt-3 w-50" id="startNewGameBtn">Start a New Game</button>
+
+
+        </a>
+
+    </div>
+
+
+    <div class="col-6">
+
+        <div class="text mb-3">
+            <span class="text-black" style="font-size: 18px">There are @Model.Count saved games.</span>
+
+
+        </div>
+        @foreach (var game in @Model.Games)
+        {
+            <div class="border p-3 rounded-3 mb-3 border-dark">
+                <div class="row">
+                    <div class="col-sm-6">
+                        @game.Players!.Count - Players
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="column">
+                            <span class="text updated" style="text-align: end">Updated: @game.UpdatedAtDt</span>
+                            <span class="text created" style="text-align: end">Created: @game.CreatedAtDt</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 column">
+                        <span class="text" style="margin-bottom: 5px">Continue as..</span>
+                        @foreach (var player in game.Players!)
+                        {
+                            var playerLabel = player.NickName + " - " + player.PlayerType;
+                            <a asp-page="/Play/Index" asp-route-gameId="@game.Id" asp-route-playerId="@player.Id">@playerLabel</a>
+                        }
+                    </div>
+
+
+                    <div class="d-flex align-items-end align-content-end flex-column mt-auto">
+
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@game.Id">
+                            <button class="btn btn-danger btn-sm rounded-0"
+                                    type="submit"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title=""
+                                    data-original-title="Delete"
+                                    style="width: 30px;">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

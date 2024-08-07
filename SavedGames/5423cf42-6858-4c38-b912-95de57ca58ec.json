@@ -1,0 +1,811 @@
+{
+  "id": "5423cf42-6858-4c38-b912-95de57ca58ec",
+  "players": [
+    {
+      "id": "54dfc691-3d99-49bc-95e4-19161c9b58c4",
+      "nickName": "J\u00FCri",
+      "playerType": 0,
+      "playerHand": [
+        {
+          "cardSuit": 0,
+          "cardValue": 1,
+          "cardShortcut": "R1"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 6,
+          "cardShortcut": "G6"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 1,
+          "cardShortcut": "Y1"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    },
+    {
+      "id": "d8e35ac9-1e38-4bae-a7f8-4c0067f4e264",
+      "nickName": "ChatGPT",
+      "playerType": 1,
+      "playerHand": [
+        {
+          "cardSuit": 2,
+          "cardValue": 4,
+          "cardShortcut": "Y4"
+        },
+        {
+          "cardSuit": 0,
+          "cardValue": 5,
+          "cardShortcut": "R5"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 10,
+          "cardShortcut": "GS"
+        },
+        {
+          "cardSuit": 0,
+          "cardValue": 9,
+          "cardShortcut": "R9"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 12,
+          "cardShortcut": "YD2"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 1,
+          "cardShortcut": "Y1"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 9,
+          "cardShortcut": "Y9"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 11,
+          "cardShortcut": "GR"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 8,
+          "cardShortcut": "Y8"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    },
+    {
+      "id": "de77ca95-854c-47f0-a75d-e5a18b96c696",
+      "nickName": "Taavi",
+      "playerType": 0,
+      "playerHand": [
+        {
+          "cardSuit": 1,
+          "cardValue": 6,
+          "cardShortcut": "B6"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 9,
+          "cardShortcut": "B9"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 7,
+          "cardShortcut": "B7"
+        },
+        {
+          "cardSuit": 0,
+          "cardValue": 8,
+          "cardShortcut": "R8"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    }
+  ],
+  "drawPile": [
+    {
+      "cardSuit": 0,
+      "cardValue": 12,
+      "cardShortcut": "RD2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 9,
+      "cardShortcut": "G9"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 11,
+      "cardShortcut": "YR"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 1,
+      "cardShortcut": "G1"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 11,
+      "cardShortcut": "RR"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 9,
+      "cardShortcut": "Y9"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 5,
+      "cardShortcut": "B5"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 3,
+      "cardShortcut": "R3"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 7,
+      "cardShortcut": "G7"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 11,
+      "cardShortcut": "BR"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 5,
+      "cardShortcut": "Y5"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 12,
+      "cardShortcut": "YD2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 2,
+      "cardShortcut": "R2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 2,
+      "cardShortcut": "Y2"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 11,
+      "cardShortcut": "BR"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 8,
+      "cardShortcut": "G8"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 12,
+      "cardShortcut": "BD2"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 2,
+      "cardShortcut": "B2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 12,
+      "cardShortcut": "GD2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 5,
+      "cardShortcut": "G5"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 5,
+      "cardShortcut": "G5"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 1,
+      "cardShortcut": "B1"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 2,
+      "cardShortcut": "G2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 12,
+      "cardShortcut": "RD2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 3,
+      "cardShortcut": "G3"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 5,
+      "cardShortcut": "Y5"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 1,
+      "cardShortcut": "B1"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 4,
+      "cardShortcut": "G4"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 2,
+      "cardShortcut": "R2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 3,
+      "cardShortcut": "Y3"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 4,
+      "cardShortcut": "B4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 10,
+      "cardShortcut": "YS"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 2,
+      "cardShortcut": "Y2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 10,
+      "cardShortcut": "RS"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 0,
+      "cardShortcut": "Y0"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 10,
+      "cardShortcut": "RS"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 8,
+      "cardShortcut": "R8"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 8,
+      "cardShortcut": "Y8"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 10,
+      "cardShortcut": "YS"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 3,
+      "cardShortcut": "B3"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 5,
+      "cardShortcut": "R5"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 5,
+      "cardShortcut": "B5"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 4,
+      "cardShortcut": "R4"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 3,
+      "cardShortcut": "R3"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 10,
+      "cardShortcut": "GS"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 7,
+      "cardShortcut": "Y7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 4,
+      "cardShortcut": "R4"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 7,
+      "cardShortcut": "B7"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 6,
+      "cardShortcut": "B6"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 1,
+      "cardShortcut": "R1"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 6,
+      "cardShortcut": "G6"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 7,
+      "cardShortcut": "G7"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 0,
+      "cardShortcut": "B0"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 0,
+      "cardShortcut": "R0"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 9,
+      "cardShortcut": "G9"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 6,
+      "cardShortcut": "R6"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 3,
+      "cardShortcut": "B3"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 7,
+      "cardShortcut": "R7"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 4,
+      "cardShortcut": "Y4"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 8,
+      "cardShortcut": "B8"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 7,
+      "cardShortcut": "Y7"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 4,
+      "cardShortcut": "G4"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 8,
+      "cardShortcut": "B8"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 11,
+      "cardShortcut": "GR"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 7,
+      "cardShortcut": "R7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 11,
+      "cardShortcut": "RR"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 10,
+      "cardShortcut": "BS"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 6,
+      "cardShortcut": "Y6"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 1,
+      "cardShortcut": "G1"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 10,
+      "cardShortcut": "BS"
+    }
+  ],
+  "discardPile": [
+    {
+      "cardSuit": 2,
+      "cardValue": 6,
+      "cardShortcut": "Y6"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 6,
+      "cardShortcut": "R6"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 13,
+      "cardShortcut": "BW"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 4,
+      "cardShortcut": "B4"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 2,
+      "cardShortcut": "B2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 2,
+      "cardShortcut": "G2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 0,
+      "cardShortcut": "G0"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 12,
+      "cardShortcut": "GD2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 8,
+      "cardShortcut": "G8"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 3,
+      "cardShortcut": "G3"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 3,
+      "cardShortcut": "Y3"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 11,
+      "cardShortcut": "YR"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 13,
+      "cardShortcut": "BW"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 12,
+      "cardShortcut": "BD2"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 9,
+      "cardShortcut": "B9"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 9,
+      "cardShortcut": "R9"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 13,
+      "cardShortcut": "RW"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 13,
+      "cardShortcut": "W"
+    }
+  ],
+  "activePlayerNo": 0,
+  "previousPlayerMoves": [
+    {
+      "player": {
+        "id": "d8e35ac9-1e38-4bae-a7f8-4c0067f4e264",
+        "nickName": "ChatGPT",
+        "playerType": 1,
+        "playerHand": [
+          {
+            "cardSuit": 3,
+            "cardValue": 10,
+            "cardShortcut": "GS"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 9,
+            "cardShortcut": "Y9"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 11,
+            "cardShortcut": "GR"
+          }
+        ],
+        "playerHasDrawnCard": false,
+        "playerSkipTurn": false,
+        "wildDraw4Challenge": false,
+        "hasCalledUno": false,
+        "chooseColor": false
+      },
+      "card": {
+        "cardSuit": 0,
+        "cardValue": 13,
+        "cardShortcut": "W"
+      },
+      "effectMessage": "played a Wild card and chose a new color"
+    },
+    {
+      "player": {
+        "id": "d8e35ac9-1e38-4bae-a7f8-4c0067f4e264",
+        "nickName": "ChatGPT",
+        "playerType": 1,
+        "playerHand": [
+          {
+            "cardSuit": 2,
+            "cardValue": 4,
+            "cardShortcut": "Y4"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 5,
+            "cardShortcut": "R5"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 10,
+            "cardShortcut": "GS"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 9,
+            "cardShortcut": "R9"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 12,
+            "cardShortcut": "YD2"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 1,
+            "cardShortcut": "Y1"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 9,
+            "cardShortcut": "Y9"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 11,
+            "cardShortcut": "GR"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 8,
+            "cardShortcut": "Y8"
+          }
+        ],
+        "playerHasDrawnCard": false,
+        "playerSkipTurn": false,
+        "wildDraw4Challenge": false,
+        "hasCalledUno": false,
+        "chooseColor": false
+      },
+      "card": {
+        "cardSuit": 1,
+        "cardValue": 13,
+        "cardShortcut": "W"
+      },
+      "effectMessage": "played a Wild card and chose a new color"
+    },
+    {
+      "player": {
+        "id": "d8e35ac9-1e38-4bae-a7f8-4c0067f4e264",
+        "nickName": "ChatGPT",
+        "playerType": 1,
+        "playerHand": [
+          {
+            "cardSuit": 2,
+            "cardValue": 4,
+            "cardShortcut": "Y4"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 5,
+            "cardShortcut": "R5"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 10,
+            "cardShortcut": "GS"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 9,
+            "cardShortcut": "R9"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 12,
+            "cardShortcut": "YD2"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 1,
+            "cardShortcut": "Y1"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 9,
+            "cardShortcut": "Y9"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 11,
+            "cardShortcut": "GR"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 8,
+            "cardShortcut": "Y8"
+          }
+        ],
+        "playerHasDrawnCard": false,
+        "playerSkipTurn": false,
+        "wildDraw4Challenge": false,
+        "hasCalledUno": false,
+        "chooseColor": false
+      },
+      "card": null,
+      "effectMessage": "ChatGPT drew a card"
+    },
+    {
+      "player": {
+        "id": "d8e35ac9-1e38-4bae-a7f8-4c0067f4e264",
+        "nickName": "ChatGPT",
+        "playerType": 1,
+        "playerHand": [
+          {
+            "cardSuit": 2,
+            "cardValue": 4,
+            "cardShortcut": "Y4"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 5,
+            "cardShortcut": "R5"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 10,
+            "cardShortcut": "GS"
+          },
+          {
+            "cardSuit": 0,
+            "cardValue": 9,
+            "cardShortcut": "R9"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 12,
+            "cardShortcut": "YD2"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 1,
+            "cardShortcut": "Y1"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 9,
+            "cardShortcut": "Y9"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 11,
+            "cardShortcut": "GR"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 8,
+            "cardShortcut": "Y8"
+          }
+        ],
+        "playerHasDrawnCard": false,
+        "playerSkipTurn": false,
+        "wildDraw4Challenge": false,
+        "hasCalledUno": false,
+        "chooseColor": false
+      },
+      "card": null,
+      "effectMessage": "ChatGPT ended their turn"
+    }
+  ],
+  "isClockwise": false
+}

@@ -1,0 +1,554 @@
+@page
+
+@using Domain.Dto
+
+@using Domain
+@using Microsoft.AspNetCore.Html
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebApp.Pages.Play.Index
+
+
+@{
+    Layout = "_BoardLayout";
+}
+
+<style>
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box !important;
+ }
+ 
+ 
+ 
+ body {
+      margin-bottom: 0px;
+ }
+ 
+         .body-container {
+             margin: 0 !important;
+             padding: 0 !important;   
+             max-width: 100%;
+             max-height: 100%;
+              
+         }
+         
+      
+           .cont {
+                  height: calc(100vh - 57px);
+                background: url('assets/back.png') center center no-repeat;
+                    background-size: cover;
+                    
+                              color: #bdc1c6;
+                  display: flex;
+                  flex-direction: row;
+                  
+              }
+      
+              .column {
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+              }
+              
+                     .center-column {
+                                flex: 4;
+                                display: flex;
+                                flex-direction: column;
+                            }
+      
+              .col-md-1, .col-md-2, .col-md-6 {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+                  color: white;
+              }
+          </style>
+
+
+@{
+    const double cardWidth = 100;
+
+    var activePlayer = Model.Engine.GetActivePlayer();
+
+    var topCard = new GameCardHeight()
+    {
+        Card = Model.Engine?.GetTopCard(),
+        Width = cardWidth
+    };
+
+    var cardBack = new GameCardHeight()
+    {
+        Card = new GameCard()
+        {
+            CardSuit = ECardSuit.Undefined,
+            CardValue = ECardValue.CardBack
+        },
+        Width = cardWidth
+    };
+
+    var availableChoices = Model.Engine?.GetAvailableChoices(Model.PlayerId);
+
+
+    int GetPlayerNumber(Domain.Player player)
+    {
+        return @Model.Engine!.State.Players.IndexOf(player) + 1;
+    }
+
+    IHtmlContent GetIcon(EPlayerType ePlayerType)
+    {
+        if (ePlayerType == EPlayerType.AI)
+        {
+            return new HtmlString("<i class=\"fa-solid fa-robot\"></i>");
+        }
+        else if (ePlayerType == EPlayerType.Random)
+        {
+            return new HtmlString("<i class=\"fa-solid fa-shuffle\"></i>");
+        }
+
+        return HtmlString.Empty;
+    }
+
+
+    IHtmlContent GetReloadTime(Guid playerId)
+    {
+        if (playerId == activePlayer!.Id)
+        {
+            return new HtmlString("<span id=\"ai-reload-label\">-</span>");
+        }
+
+        return HtmlString.Empty;
+    }
+}
+
+<div class="cont">
+
+
+<!-- Player 1 -->
+<div class="column">
+
+
+    <div class="col d-flex flex-column justify-content-center ml-3" style="padding-right: 20px">
+        <div class="d-flex flex-column justify-content-center align-items-end" style="padding-bottom: 130px">
+            @if (Model.PlayersInOrder.Count > 0 && (bool)Model.PlayersInOrder[0]?.PlayerHand.Any())
+            {
+                for (int i = 0; i < Model.PlayersInOrder[0].PlayerHand.Count; i++)
+                {
+                    <div class="col-auto" style="margin-bottom: -130px">
+                        @await Html.PartialAsync("PartialViews/Card", cardBack)
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Vertical Line and Text -->
+<div class="col-auto" style="height: 100%; display: flex; flex-direction: column; align-items: center; position: relative;">
+    @if (Model.PlayersInOrder.Count > 0)
+    {
+        <div class="stripe" style="position: absolute; top: calc(50% - 20px); transform: translateY(-50%); height: 25%; width: 1px; margin: 1rem 0; color: inherit; background-color: currentColor; border: 0; opacity: .25;"></div>
+
+        <div class="text-center" style="margin: 0; padding: 0; height: auto; position: absolute; top: calc(50% - 20px); transform: translateY(-50%); left: 10px;">
+            <span class="text" style="text-align: start; font-size: 18px; color: @(Model.PlayersInOrder[0].Id == activePlayer.Id ? "#B3AD15" : "default-color"); white-space: nowrap;">
+                Player @GetPlayerNumber(Model.PlayersInOrder[0])
+            </span>
+            <span class="text" style="text-align: start; font-size: 18px; color: @(Model.PlayersInOrder[0].Id == activePlayer.Id ? "#B3AD15" : "default-color"); white-space: nowrap;">
+                @Model.PlayersInOrder[0].NickName @GetIcon(@Model.PlayersInOrder[0].PlayerType)
+                @GetReloadTime(@Model.PlayersInOrder[0].Id)
+            </span>
+            @if (Model.PlayersInOrder[0].HasCalledUno)
+            {
+                <span class="text" style="font-size: 18px; color: #B3AD15; white-space: nowrap;">Called UNO!</span>
+            }
+        </div>
+    }
+</div>
+
+
+<div class="center-column">
+
+    <!-- Player 2 -->
+    <div class="row h-100 justify-content-center">
+
+        @if (Model.PlayersInOrder.Count > 1)
+        {
+            <div class="col-md-12 text-center" style="align-self: flex-end">
+                <div class="row h-100 justify-content-center" style="padding-right: 75px">
+                    @if (Model.PlayersInOrder[1].PlayerHand.Any())
+                    {
+                        for (int i = 0; i < Model.PlayersInOrder[1].PlayerHand.Count; i++)
+                        {
+                            <div class="col-md-1" style=" margin-right: -75px;">
+                                @await Html.PartialAsync("PartialViews/Card", cardBack)
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="text-center" style="margin: 0; padding: 0; height: 20px;">
+                <hr class="stripe mx-auto" style="width: 25%;  margin-bottom: 4px; "/>
+                <span class="text" style="font-size: 18px; color: @(Model.PlayersInOrder[1].Id == activePlayer.Id ? "#B3AD15" : "default-color") ">Player @GetPlayerNumber(Model.PlayersInOrder[1]) - @Model.PlayersInOrder[1].NickName @GetIcon(@Model.PlayersInOrder[1].PlayerType) @GetReloadTime(@Model.PlayersInOrder[1].Id)</span>
+                @if (Model.PlayersInOrder[1].HasCalledUno)
+                {
+                    <span class="text" style="font-size: 18px; color: #B3AD15"> Called UNO!</span>
+                }
+            </div>
+        }
+
+    </div>
+
+    <!-- TOP CARD-->
+    <div class="row h-100 justify-content-center" style="display: flex; flex-direction: row; align-items: center;">
+
+        @if (availableChoices.Any(c => c.Value == EPlayerAction.EndTurn))
+        {
+            <div class="col-auto">
+                <form method="post" asp-page-handler="EndTurn">
+                    <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                    <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                    <button type="submit" class="btn btn-light">@(Model.CurrentPlayer.PlayerSkipTurn ? "Skip Turn" : "End Turn")</button>
+                </form>
+            </div>
+        }
+        <div class="col-auto">
+            <form method="post" asp-page-handler="DrawCard">
+                <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                <button type="submit" style="outline: none; background: none; border: none; padding: 0; @(activePlayer?.Id == Model.PlayerId && !availableChoices.Any(c => c.Value == EPlayerAction.PlayCard) && availableChoices.Any(c => c.Value == EPlayerAction.DrawCard) ? "padding-bottom: 50px;" : "pointer-events: none;")">
+                    @await Html.PartialAsync("PartialViews/Card", cardBack)
+                </button>
+            </form>
+        </div>
+
+        <div class="col-auto">
+
+            @if (topCard != null)
+            {
+                @await Html.PartialAsync("PartialViews/Card", topCard)
+            }
+
+        </div>
+
+        <div class="col-auto">
+
+            @if (availableChoices.Any(c => c.Value == EPlayerAction.ChallengeWd4))
+            {
+                <form method="post" asp-page-handler="SkipTurnWd4">
+                    <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                    <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                    <button type="submit" class="btn btn-light d-block mb-2">Skip</button>
+                </form>
+
+                <form method="post" asp-page-handler="ChallengeWd4">
+                    <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                    <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                    <button type="submit" class="btn btn-light d-block">Challenge</button>
+                </form>
+            }
+            else
+            {
+                <form method="post" asp-page-handler="CallUno">
+                    <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                    <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                    <button type="submit" class="btn btn-light d-block mb-2" style="@(activePlayer?.Id == Model.PlayerId && !Model.CurrentPlayer.PlayerSkipTurn ? "" : "pointer-events: none;") ">
+                        Call UNO
+                    </button>
+                </form>
+
+                <form method="post" asp-page-handler="AITurn" style="display: none;">
+                    <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                    <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                    <button id="ai-turn-button" type="submit" class="btn btn-light d-block mb-2">AI Turn</button>
+                </form>
+            }
+        </div>
+    </div>
+
+    <!-- Player CurrentPlayer -->
+    <div class="row h-100 justify-content-center">
+
+
+        <div class="text-center" style="margin: 0; padding: 0; padding-bottom: 25px; height: 20px;">
+            <span class="text" style="font-size: 18px; color: @(Model.CurrentPlayer.Id == activePlayer.Id ? "#B3AD15" : "default-color")">Player @GetPlayerNumber(Model.CurrentPlayer) - @Model.CurrentPlayer.NickName @GetIcon(@Model.CurrentPlayer.PlayerType) @GetReloadTime(@Model.CurrentPlayer.Id)</span>
+
+
+            @if (Model.CurrentPlayer.HasCalledUno)
+            {
+                <span class="text" style="font-size: 18px; color: #B3AD15"> Called UNO!</span>
+            }
+            <hr class="stripe mx-auto" style="width: 25%;  margin-top: 4px; "/>
+
+
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="row justify-content-center">
+
+
+                @if (@Model.CurrentPlayer.ChooseColor)
+                {
+                    <span class="text" style="font-size: 18px; padding-bottom: 15px">Choose a new color</span>
+                    foreach (var colorSuit in @Model.Engine!.GetAllColors.Values)
+                    {
+                        var colorCard = new GameCardHeight()
+                        {
+                            Card = new GameCard()
+                            {
+                                CardSuit = colorSuit,
+                                CardValue = ECardValue.ChooseColor
+                            },
+                            Width = 50
+                        };
+                        <div class="col-md-1">
+                            <form method="post" asp-page-handler="SetNewColor">
+                                <input type="hidden" asp-for="@Model.SelectedNewColor" value="@colorSuit"/>
+                                <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                                <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                                <button type="submit" style="outline: none; background: none; border: none; padding: 0;">
+                                    @await Html.PartialAsync("PartialViews/Card", colorCard)
+                                </button>
+                            </form>
+                        </div>
+                    }
+                }
+
+            </div>
+
+
+            <div class="row justify-content-center" style="padding-right: 30px">
+                @if (Model.CurrentPlayer.PlayerHand.Any())
+                {
+                    var orderedHand = Model.Engine!.GetOrderedHand(Model.CurrentPlayer);
+
+                    @foreach (var card in orderedHand)
+                    {
+                        var gameCard = new GameCardHeight()
+                        {
+                            Card = card,
+                            Width = cardWidth
+                        };
+
+                        <div class="col-md-1" style="margin-right: -30px;">
+                            <form method="post" asp-page-handler="PlayCard">
+                                <input type="hidden" asp-for="@Model.CardShortcut" value="@card.CardShortcut"/>
+                                <input type="hidden" asp-for="@Model.GameId" value="@Model.GameId"/>
+                                <input type="hidden" asp-for="@Model.PlayerId" value="@Model.PlayerId"/>
+                                <button type="submit" style="
+                                outline: none; 
+                                background: none; 
+                                border: none; 
+                                padding: 0; 
+@(activePlayer?.Id == Model.PlayerId && availableChoices.Any(c => c.Value == EPlayerAction.PlayCard) && Model.Engine.ValidateMove(card, Model.Engine.GetTopCard()) ? "padding-bottom: 25px;" : "  filter: brightness(50%); pointer-events: none;") ">
+                                    @await Html.PartialAsync("PartialViews/Card", gameCard)
+
+                                </button>
+                            </form>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Player 3 -->
+
+<!-- Vertical Line and Text -->
+<div class="col-auto" style="height: 100%; display: flex; flex-direction: column; align-items: center; position: relative;">
+
+    @if (Model.PlayersInOrder.Count > 2)
+    {
+        <div class="text-center" style="margin: 0; padding: 0; height: auto; position: absolute; top: calc(50% - 20px); transform: translateY(-50%); right: 10px;">
+            <span class="text" style="font-size: 18px; color: @(Model.PlayersInOrder[2].Id == activePlayer.Id ? "#B3AD15" : "default-color"); white-space: nowrap;">
+                Player @GetPlayerNumber(Model.PlayersInOrder[2])
+            </span>
+            <span class="text" style="font-size: 18px; color: @(Model.PlayersInOrder[2].Id == activePlayer.Id ? "#B3AD15" : "default-color"); white-space: nowrap;">
+                @Model.PlayersInOrder[2].NickName @GetIcon(@Model.PlayersInOrder[2].PlayerType) @GetReloadTime(@Model.PlayersInOrder[2].Id)
+            </span>
+            @if (Model.PlayersInOrder[2].HasCalledUno)
+            {
+                <span class="text" style="font-size: 18px; color: #B3AD15; white-space: nowrap;">Called UNO!</span>
+            }
+        </div>
+
+        <div class="stripe" style="position: absolute; top: calc(50% - 20px); transform: translateY(-50%); height: 25%; width: 1px; margin: 1rem 0; color: inherit; background-color: currentColor; border: 0; opacity: .25;"></div>
+    }
+
+</div>
+
+<div class="column">
+
+
+    <div class="col d-flex flex-column justify-content-center ml-3" style="padding-left: 20px">
+
+        <div class="d-flex flex-column justify-content-center align-items-start" style="padding-bottom: 130px">
+            @if (Model.PlayersInOrder.Count > 2 && Model.PlayersInOrder[2].PlayerHand.Any())
+            {
+                for (int i = 0; i < Model.PlayersInOrder[2].PlayerHand.Count; i++)
+                {
+                    <div class="col-auto" style="margin-bottom: -130px">
+                        @await Html.PartialAsync("PartialViews/Card", cardBack)
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+</div>
+
+
+<!-- info Column -->
+<div class="column mt-5">
+    @if (Model.CurrentPlayer != null)
+    {
+        <div class="col" style="overflow: hidden">
+
+
+            <h4>Player: @(Model.CurrentPlayer.NickName)</h4>
+
+            <div class="row mt-3 mb-3">
+
+                <dt class="col-sm-6 dt_head">
+                    HasCalledUno
+                </dt>
+                <dd class="col-sm-2 dd_col">
+                    @Model.CurrentPlayer.HasCalledUno
+                </dd>
+
+                <dt class="col-sm-6 dt_head">
+                    PlayerSkipTurn
+                </dt>
+                <dd class="col-sm-2 dd_col">
+                    @Model.CurrentPlayer.PlayerSkipTurn
+                </dd>
+
+                <dt class="col-sm-6 dt_head">
+                    WildDraw4Challenge
+                </dt>
+                <dd class="col-sm-2 dd_col">
+                    @Model.CurrentPlayer.WildDraw4Challenge
+                </dd>
+                <dt class="col-sm-6 dt_head">
+                    PlayerHasDrawnCard
+                </dt>
+                <dd class="col-sm-2 dd_col">
+                    @Model.CurrentPlayer.PlayerHasDrawnCard
+                </dd>
+
+                <dt class="col-sm-6 dt_head">
+                    ChooseColor
+                </dt>
+                <dd class="col-sm-2 dd_col">
+                    @Model.CurrentPlayer.ChooseColor
+                </dd>
+
+
+            </div>
+
+            <div class="game-info  mt-3 mb-3">
+                <div class="row">
+
+                    <dt class="col-sm-4 dt_head">
+                        Direction:
+                    </dt>
+                    <dd class="col-sm-auto dd_col">
+                        @(Model.Engine!.State.IsClockwise ? "Clockwise" : "Counterclockwise")
+                    </dd>
+
+                    <dt class="col-sm-5 dt_head">
+                        Discard pile:
+                    </dt>
+                    <dd class="col-sm-auto dd_col">
+                        @Model.Engine.State.DiscardPile.Count cards
+                    </dd>
+
+                    <dt class="col-sm-5 dt_head">
+                        Draw pile:
+                    </dt>
+                    <dd class="col-sm-auto dd_col">
+                        @Model.Engine.State.DrawPile.Count cards
+                    </dd>
+
+
+                    @foreach (var player in @Model.Engine.State.Players)
+                    {
+                        <dt class="col-sm-5 dt_head">
+                            Player - @player.NickName:
+                        </dt>
+                        <dd class="col-sm-auto dd_col">
+                            @player.PlayerHand.Count cards
+                        </dd>
+                    }
+                </div>
+
+
+                <span class="text">Available options:</span>
+
+                @if (availableChoices != null)
+                {
+                    @foreach (var choice in availableChoices)
+                    {
+                        <dt class="col-sm-auto dt_head">
+                            @choice.Value
+                        </dt>
+                    }
+                }
+
+                <div class="last-moves mt-3">
+                <span class="text">previous player @Model.Engine.GetPreviousPlayer().NickName's moves:</span>
+
+                @{
+                    var lastMoves = Model.Engine.State.PreviousPlayerMoves.FindAll(p => p.Player.Id == @Model.Engine.GetPreviousPlayer().Id);
+                }
+
+                @if (lastMoves.Count > 0)
+                {
+                    @foreach (var move in lastMoves)
+                    {
+                        <dt class="col-sm-auto dt_head">
+                            @move.Card?.CardShortcut - @move.EffectMessage
+                        </dt>
+                    }
+                }
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+</div>
+
+
+@if (Model.CurrentPlayer!.Id != activePlayer.Id || Model.CurrentPlayer.PlayerType != EPlayerType.Human)
+{
+    <script>
+    let aiTimerValue = 5;
+    let aiTimerLabel = document.querySelector("#ai-reload-label");
+
+    function executeAITurn() {
+        if (aiTimerValue > 0) {
+            aiTimerValue--;
+            aiTimerLabel.innerHTML = aiTimerValue.toString();
+        } else {
+          
+            document.querySelector("#ai-turn-button").click();
+
+        
+            aiTimerValue = 5;
+        }
+    }
+ 
+    executeAITurn();
+
+
+    setInterval(executeAITurn, 1000);
+    </script>
+}

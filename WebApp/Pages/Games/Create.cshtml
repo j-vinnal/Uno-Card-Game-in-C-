@@ -1,0 +1,105 @@
+@page
+@using Domain
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+    
+</style>
+<h4>Game Setting</h4>
+<hr/>
+<div class="row">
+
+    <form method="post" asp-page-handler="AddPlayer">
+        <div class="row">
+            <div class="col-auto">
+                <div class="form-group">
+                    <label asp-for="Player.NickName" class="control-label">Player Nickname</label>
+                    <input asp-for="Player.NickName" class="form-control"/>
+                    <span asp-validation-for="Player.NickName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="form-group mb-3">
+                    <label asp-for="Player.PlayerType" class="control-label">Player Type</label>
+                    <select asp-for="Player.PlayerType" asp-items="Html.GetEnumSelectList<EPlayerType>()" class="form-control"></select>
+                    <span asp-validation-for="Player.PlayerType" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-auto d-flex align-items-center">
+                <input type="submit" value="Add player" class="btn btn-primary" style="@(Model.Players.Count == 4 ? "pointer-events: none;" : "")"/>
+            </div>
+        </div>
+
+        @for (int i = 0; i < Model.Players.Count; i++)
+        {
+            <input type="hidden" asp-for="Players[i].NickName" value="@Model.Players[i].NickName"/>
+            <input type="hidden" asp-for="Players[i].PlayerType" value="@Model.Players[i].PlayerType"/>
+        }
+        
+        <input type="hidden" asp-for="GameOptions.AiSpeed" value="@Model.GameOptions.AiSpeed"/>
+         <input type="hidden" asp-for="GameOptions.HandSize" value="@Model.GameOptions.HandSize"/>
+    </form>
+
+
+<div class="row mt-3 column">
+    <span class="text">Added players - @Model.Players.Count</span>
+    <div class="col-md-6 mt-2">
+        
+        @for (int i = 0; i < Model.Players.Count; i++)
+        {
+            <div class="row">
+                <dt class="col-sm-3 dt_head">
+                    @( i == 0 ?  @Model.Players[i].NickName + " (you)" :  @Model.Players[i].NickName)
+                 
+                </dt>
+                <dd class="col-sm-3 dd_col">
+                    @Model.Players[i].PlayerType
+                </dd>
+            </div>
+        }
+    </div>
+</div>
+
+
+    <div class="row mt-5">
+        <form method="post" asp-page-handler="StartGame">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+         <div class="form-group col-md-6">
+                   <label asp-for="GameOptions.HandSize" class="control-label">Hand Size</label>
+                   <input asp-for="GameOptions.HandSize" class="form-control"/>
+                   <span asp-validation-for="GameOptions.HandSize" class="text-danger"></span>
+               </div>
+            
+
+            <div class="form-group mt-3">
+                
+                <input type="submit" value="Start new game" class="btn btn-primary" style=" @(Model.Players.Count < 2 || Model.Players.Count > 4? "pointer-events: none;" : "")"/>
+                
+            </div>
+                    @for (int i = 0; i < Model.Players.Count; i++)
+                    {
+                        <input type="hidden" asp-for="Players[i].NickName" value="@Model.Players[i].NickName"/>
+                        <input type="hidden" asp-for="Players[i].PlayerType" value="@Model.Players[i].PlayerType"/>
+                    }
+            
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,651 @@
+{
+  "id": "5a5692c6-478a-47b9-ada7-06736b46789f",
+  "players": [
+    {
+      "id": "d1515dc7-3878-43fc-9588-4e8fb83fc18c",
+      "nickName": "a1",
+      "playerType": 1,
+      "playerHand": [
+        {
+          "cardSuit": 2,
+          "cardValue": 10,
+          "cardShortcut": "YS"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 1,
+          "cardShortcut": "G1"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 10,
+          "cardShortcut": "BS"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 1,
+          "cardShortcut": "B1"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 6,
+          "cardShortcut": "G6"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 8,
+          "cardShortcut": "G8"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 9,
+          "cardShortcut": "Y9"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 9,
+          "cardShortcut": "Y9"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    },
+    {
+      "id": "a7a912c2-0d30-43f8-8004-ed66097a0766",
+      "nickName": "r2",
+      "playerType": 2,
+      "playerHand": [
+        {
+          "cardSuit": 1,
+          "cardValue": 5,
+          "cardShortcut": "B5"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 5,
+          "cardShortcut": "B5"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 7,
+          "cardShortcut": "Y7"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 6,
+          "cardShortcut": "Y6"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 5,
+          "cardShortcut": "G5"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 9,
+          "cardShortcut": "B9"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    },
+    {
+      "id": "9ceaba90-2827-42f4-ae94-6b2717913e7a",
+      "nickName": "h3",
+      "playerType": 0,
+      "playerHand": [
+        {
+          "cardSuit": 2,
+          "cardValue": 1,
+          "cardShortcut": "Y1"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 5,
+          "cardShortcut": "Y5"
+        },
+        {
+          "cardSuit": 0,
+          "cardValue": 11,
+          "cardShortcut": "RR"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 4,
+          "cardShortcut": "G4"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 2,
+          "cardShortcut": "G2"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 1,
+          "cardShortcut": "G1"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 12,
+          "cardShortcut": "BD2"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    },
+    {
+      "id": "ec48ceab-5846-45fa-ba95-d41ce67a9ebf",
+      "nickName": "a4",
+      "playerType": 1,
+      "playerHand": [
+        {
+          "cardSuit": 1,
+          "cardValue": 2,
+          "cardShortcut": "B2"
+        },
+        {
+          "cardSuit": 2,
+          "cardValue": 6,
+          "cardShortcut": "Y6"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 3,
+          "cardShortcut": "B3"
+        },
+        {
+          "cardSuit": 1,
+          "cardValue": 1,
+          "cardShortcut": "B1"
+        },
+        {
+          "cardSuit": 3,
+          "cardValue": 3,
+          "cardShortcut": "G3"
+        }
+      ],
+      "playerHasDrawnCard": false,
+      "playerSkipTurn": false,
+      "wildDraw4Challenge": false,
+      "hasCalledUno": false,
+      "chooseColor": false
+    }
+  ],
+  "drawPile": [
+    {
+      "cardSuit": 1,
+      "cardValue": 7,
+      "cardShortcut": "B7"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 6,
+      "cardShortcut": "B6"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 10,
+      "cardShortcut": "RS"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 4,
+      "cardShortcut": "B4"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 11,
+      "cardShortcut": "RR"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 10,
+      "cardShortcut": "RS"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 9,
+      "cardShortcut": "G9"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 0,
+      "cardShortcut": "Y0"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 9,
+      "cardShortcut": "B9"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 4,
+      "cardShortcut": "R4"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 9,
+      "cardShortcut": "G9"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 7,
+      "cardShortcut": "R7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 5,
+      "cardShortcut": "R5"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 12,
+      "cardShortcut": "BD2"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 0,
+      "cardShortcut": "B0"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 9,
+      "cardShortcut": "R9"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 0,
+      "cardShortcut": "R0"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 11,
+      "cardShortcut": "BR"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 8,
+      "cardShortcut": "B8"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 4,
+      "cardShortcut": "R4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 2,
+      "cardShortcut": "Y2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 3,
+      "cardShortcut": "Y3"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 10,
+      "cardShortcut": "GS"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 1,
+      "cardShortcut": "Y1"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 8,
+      "cardShortcut": "Y8"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 5,
+      "cardShortcut": "G5"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 8,
+      "cardShortcut": "R8"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 11,
+      "cardShortcut": "YR"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 10,
+      "cardShortcut": "GS"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 3,
+      "cardShortcut": "B3"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 6,
+      "cardShortcut": "R6"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 11,
+      "cardShortcut": "YR"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 11,
+      "cardShortcut": "BR"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 7,
+      "cardShortcut": "B7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 6,
+      "cardShortcut": "R6"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 6,
+      "cardShortcut": "B6"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 7,
+      "cardShortcut": "G7"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 11,
+      "cardShortcut": "GR"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 11,
+      "cardShortcut": "GR"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 5,
+      "cardShortcut": "R5"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 12,
+      "cardShortcut": "YD2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 1,
+      "cardShortcut": "R1"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 2,
+      "cardShortcut": "R2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 4,
+      "cardShortcut": "Y4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 3,
+      "cardShortcut": "Y3"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 0,
+      "cardShortcut": "G0"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 4,
+      "cardShortcut": "G4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 7,
+      "cardShortcut": "Y7"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 13,
+      "cardShortcut": "W"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 5,
+      "cardShortcut": "Y5"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 7,
+      "cardShortcut": "G7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 1,
+      "cardShortcut": "R1"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 2,
+      "cardShortcut": "R2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 3,
+      "cardShortcut": "R3"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 6,
+      "cardShortcut": "G6"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 8,
+      "cardShortcut": "G8"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 12,
+      "cardShortcut": "GD2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 3,
+      "cardShortcut": "G3"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 4,
+      "cardShortcut": "Y4"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 10,
+      "cardShortcut": "BS"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 9,
+      "cardShortcut": "R9"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 4,
+      "cardShortcut": "B4"
+    },
+    {
+      "cardSuit": 4,
+      "cardValue": 14,
+      "cardShortcut": "D4"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 2,
+      "cardShortcut": "Y2"
+    },
+    {
+      "cardSuit": 3,
+      "cardValue": 12,
+      "cardShortcut": "GD2"
+    }
+  ],
+  "discardPile": [
+    {
+      "cardSuit": 3,
+      "cardValue": 2,
+      "cardShortcut": "G2"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 2,
+      "cardShortcut": "B2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 13,
+      "cardShortcut": "YW"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 10,
+      "cardShortcut": "YS"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 13,
+      "cardShortcut": "RW"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 12,
+      "cardShortcut": "RD2"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 12,
+      "cardShortcut": "YD2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 12,
+      "cardShortcut": "RD2"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 7,
+      "cardShortcut": "R7"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 13,
+      "cardShortcut": "RW"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 3,
+      "cardShortcut": "R3"
+    },
+    {
+      "cardSuit": 0,
+      "cardValue": 8,
+      "cardShortcut": "R8"
+    },
+    {
+      "cardSuit": 1,
+      "cardValue": 8,
+      "cardShortcut": "B8"
+    },
+    {
+      "cardSuit": 2,
+      "cardValue": 8,
+      "cardShortcut": "Y8"
+    }
+  ],
+  "activePlayerNo": 2,
+  "previousPlayerMoves": [
+    {
+      "player": {
+        "id": "a7a912c2-0d30-43f8-8004-ed66097a0766",
+        "nickName": "r2",
+        "playerType": 2,
+        "playerHand": [
+          {
+            "cardSuit": 1,
+            "cardValue": 5,
+            "cardShortcut": "B5"
+          },
+          {
+            "cardSuit": 1,
+            "cardValue": 5,
+            "cardShortcut": "B5"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 7,
+            "cardShortcut": "Y7"
+          },
+          {
+            "cardSuit": 2,
+            "cardValue": 6,
+            "cardShortcut": "Y6"
+          },
+          {
+            "cardSuit": 3,
+            "cardValue": 5,
+            "cardShortcut": "G5"
+          },
+          {
+            "cardSuit": 1,
+            "cardValue": 9,
+            "cardShortcut": "B9"
+          }
+        ],
+        "playerHasDrawnCard": false,
+        "playerSkipTurn": false,
+        "wildDraw4Challenge": false,
+        "hasCalledUno": false,
+        "chooseColor": false
+      },
+      "card": {
+        "cardSuit": 2,
+        "cardValue": 8,
+        "cardShortcut": "Y8"
+      },
+      "effectMessage": "played a card"
+    }
+  ],
+  "isClockwise": true
+}
