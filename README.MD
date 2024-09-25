@@ -1,6 +1,6 @@
 # UNO Card Game
 
-This project is a C# implementation of the UNO card game. The game supports both console and web-based play, with features including game state saving/loading, AI players, and multiplayer support. 
+This project is a C# implementation of the UNO card game. The game supports both console and web-based play, with features including game state saving/loading, bot players, and multiplayer support. 
 **Work is still in progress.**
 
 ![Web gameplay](gameplay.png)  
@@ -105,8 +105,8 @@ The game setup involves initializing the game options, setting up players, and d
 ### Game Flow in Console
 The game flow is managed by the [`GameController`](./UnoConsoleUI/GameController.cs) class, which handles player turns, card plays, and game state updates.
 
-### AI Players
-AI players are supported and can be configured to play automatically. The AI logic is implemented within the [`UnoGameEngine`](./GameEngine/UnoGameEngine.cs) class.
+### Bot Players
+Bot players are supported and can be configured to play automatically. The bot logic is implemented within the [`UnoGameEngine`](./GameEngine/UnoGameEngine.cs) class.
 
 ### Saving and Loading Game State
 The game state can be saved to and loaded from both JSON files and a database. The data access logic is implemented in the [`GameRepositoryFileSystem`](./DAL/GameRepositoryFileSystem.cs) and [`GameRepositoryEF`](./DAL/GameRepositoryEF.cs) classes.
